@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dashboard.Core.Application.Services;
-internal interface IAlertProcessingService
+namespace Dashboard.Infrastructure.Services.BackgroundServices;
+internal class MidnightResetService
 {
 }

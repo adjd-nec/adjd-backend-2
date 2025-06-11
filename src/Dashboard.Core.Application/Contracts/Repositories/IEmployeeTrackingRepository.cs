@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dashboard.Core.Application.Services;
-internal interface INeoFaceSyncService
+namespace Dashboard.Core.Application.Contracts.Repositories;
+internal interface IEmployeeTrackingRepository
 {
 }
