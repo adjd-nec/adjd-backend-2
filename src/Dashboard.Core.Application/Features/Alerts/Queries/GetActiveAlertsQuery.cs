@@ -9,6 +9,7 @@ using Dashboard.Core.Application.DTOs;
 using Dashboard.Core.Domain.Enums;
 using MapsterMapper;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 
 namespace Dashboard.Core.Application.Features.Alerts.Queries;
 public record GetActiveAlertsQuery(

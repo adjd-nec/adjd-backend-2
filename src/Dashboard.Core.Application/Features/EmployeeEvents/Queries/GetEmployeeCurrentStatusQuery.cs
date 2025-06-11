@@ -8,6 +8,7 @@ using Dashboard.Core.Application.Contracts;
 using Dashboard.Core.Application.DTOs;
 using MapsterMapper;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 
 namespace Dashboard.Core.Application.Features.EmployeeEvents.Queries;
 public record GetEmployeeCurrentStatusQuery(
