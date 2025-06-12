@@ -46,7 +46,7 @@ public class AdjdDashboardDbContext : DbContext
         ConfigureValueConversions(modelBuilder);
 
         // Seed Data
-        SeedInitialData(modelBuilder);
+        //SeedInitialData(modelBuilder);
     }
 
     private static void ConfigureIndexes(ModelBuilder modelBuilder)
