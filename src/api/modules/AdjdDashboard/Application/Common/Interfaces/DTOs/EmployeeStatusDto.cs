@@ -11,4 +11,6 @@ public record EmployeeStatusDto
     public string? LastEventType { get; init; }
     public string? LastCameraName { get; init; }
     public int ActiveAlertCount { get; init; }
+    public DateTime? LastSeen { get; internal set; }
+    public string Location { get; internal set; }
 }

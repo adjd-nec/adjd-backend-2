@@ -1,4 +1,5 @@
 using FSH.Framework.Core.Domain;
+using FSH.Starter.AdjdDashboard.Domain.Enums;
 using System.ComponentModel.DataAnnotations;
 
 namespace FSH.Starter.AdjdDashboard.Domain;
@@ -9,17 +10,23 @@ public class AdjdCameraConfiguration : AuditableEntity<Guid>
     public Guid CameraId { get; set; }
     public virtual AdjdCamera Camera { get; set; } = null!;
 
-    // Detection Settings
-    public decimal MinConfidenceThreshold { get; set; } = 0.7m;
-    public int EventCooldownSeconds { get; set; } = 30;
-    public bool EnableDuplicateDetection { get; set; } = true;
-
-    // Alert Settings
-    public bool GenerateAlerts { get; set; } = true;
-    public bool NotifyOnHighPriority { get; set; } = true;
+    // Detection Thresholds
+    public decimal MinConfidenceThreshold { get; set; } = 0.8m;
+    public decimal MinFaceQualityScore { get; set; } = 0.7m;
+    public decimal MinFrontalFaceScore { get; set; } = 0.6m;
 
     // Processing Settings
-    public bool ProcessEvents { get; set; } = true;
+    public bool EnableRealTimeProcessing { get; set; } = true;
+    public bool EnableImageCapture { get; set; } = true;
+    public bool EnableEventLogging { get; set; } = true;
+
+    // Alert Configuration
+    public bool EnableMissingEventAlerts { get; set; } = true;
+    public bool EnableDoubleCountingAlerts { get; set; } = true;
+    public bool EnableAwayAlerts { get; set; } = true;
+
+    // Timing Configuration
+    public int EventProcessingDelayMs { get; set; } = 1000;
     public int MaxEventsPerMinute { get; set; } = 60;
 
     // Maintenance

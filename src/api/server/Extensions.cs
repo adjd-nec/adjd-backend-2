@@ -2,6 +2,7 @@
 using Asp.Versioning.Conventions;
 using Carter;
 using FluentValidation;
+using FSH.Starter.AdjdDashboard;
 using FSH.Starter.WebApi.Catalog.Application;
 using FSH.Starter.WebApi.Catalog.Infrastructure;
 using FSH.Starter.WebApi.Todo;
@@ -33,6 +34,7 @@ public static class Extensions
         //register module services
         builder.RegisterCatalogServices();
         builder.RegisterTodoServices();
+        builder.RegisterAdjdDashboardServices();
 
         //add carter endpoint modules
         builder.Services.AddCarter(configurator: config =>
@@ -51,6 +53,7 @@ public static class Extensions
         //register modules
         app.UseCatalogModule();
         app.UseTodoModule();
+        app.UseAdjdDashboardModule();
 
         //register api versions
         var versions = app.NewApiVersionSet()

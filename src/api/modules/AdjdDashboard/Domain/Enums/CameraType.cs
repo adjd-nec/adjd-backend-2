@@ -4,6 +4,6 @@ public enum CameraType
 {
     Entry = 1,
     Exit = 2,
-    Both = 3,
+    Bidirectional = 3,
     MonitorOnly = 4
 }

@@ -8,29 +8,26 @@ public class AdjdDailyCounter : AuditableEntity<Guid>
     [Required]
     public DateTime CounterDate { get; set; }
 
-    // Employee Counts
-    public int TotalEmployeesPresent { get; set; } = 0;
+    public Guid? LocationId { get; set; }
+    public virtual AdjdLocation? Location { get; set; }
+
+    // Entry/Exit Counts
     public int TotalEntries { get; set; } = 0;
     public int TotalExits { get; set; } = 0;
+    public int CurrentPresent { get; set; } = 0;
 
     // Alert Counts
     public int MissingEntryAlerts { get; set; } = 0;
     public int MissingExitAlerts { get; set; } = 0;
-    public int DoubleCountingAlerts { get; set; } = 0;
+    public int DoubleEntryAlerts { get; set; } = 0;
+    public int DoubleExitAlerts { get; set; } = 0;
     public int AwayAlerts { get; set; } = 0;
 
-    // Camera Status
-    public int ActiveCameras { get; set; } = 0;
-    public int InactiveCameras { get; set; } = 0;
+    // Peak Statistics
+    public int PeakPresent { get; set; } = 0;
+    public DateTime? PeakTime { get; set; }
 
-    // Processing Statistics
-    public int EventsProcessed { get; set; } = 0;
-    public int EventsSkipped { get; set; } = 0;
-
-    public bool IsReset { get; set; } = false;
-    public DateTime? ResetAt { get; set; }
-
-    // Location-specific counters
-    public Guid? LocationId { get; set; }
-    public virtual AdjdLocation? Location { get; set; }
+    // Reset Information
+    public DateTime LastResetAt { get; set; }
+    public bool IsResetComplete { get; set; } = true;
 }

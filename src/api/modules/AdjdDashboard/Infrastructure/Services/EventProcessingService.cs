@@ -183,7 +183,7 @@ public class EventProcessingService : BackgroundService
         {
             CameraType.Entry => EventType.Entry,
             CameraType.Exit => EventType.Exit,
-            CameraType.Both => EventType.Unknown, // Will need additional logic
+            CameraType.Bidirectional => EventType.Unknown, // Will need additional logic
             CameraType.MonitorOnly => EventType.Unknown,
             _ => EventType.Unknown
         };

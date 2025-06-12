@@ -4,12 +4,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FSH.Starter.AdjdDashboard.Infrastructure.Persistence.Repositories;
 
-public class Repository<T, TKey> : IRepository<T, TKey> where T : class
+public abstract class Repository<T, TKey> : IRepository<T, TKey>
+    where T : class
 {
     protected readonly AdjdDashboardDbContext _context;
     protected readonly DbSet<T> _dbSet;
 
-    public Repository(AdjdDashboardDbContext context)
+    protected Repository(AdjdDashboardDbContext context)
     {
         _context = context;
         _dbSet = context.Set<T>();
